@@ -1,0 +1,78 @@
+Notes regarding the saltstack states that I expect about my machines.
+This directory is also the one that should be mounted in the salt-master
+machine as the /srv/salt directory, so that I can effectivly edit the files on whim,
+and backup to SpiderOak.
+
+
+# Is there a way to run only certain state checks, rather than the whole tree?
+
+
+===============================================================================
+UNPLACED SERVICES:
+    These are the things I've wanted, without the headache of maintenance.
+    Now that I have a saltstack, it should be a non-issue.
+
+- Icinga monitoring software
+- Logging server
+- Security system of rasperry pi?
+    # Using the motion lib, and zoneminder?
+    # This would be a pretty sweet use of saltstack to 'deploy cameras'
+- Kindle webface for reading all my books from any wifi point.
+- Media server to WAN, for all my movie and music needs.
+- Spotify on wine server (so I can jam!!)
+- Pandora recorder
+- Cluster nodes, as SSI if possible. (arm architecture)
+    # Open MPI??
+- Sparkleshare (dropbox equivalent)?
+- SiP and phone to allow landcalls?
+    # Haha.. maybe I will end up with a landline again..
+
+SERVICES FOR MIGRATION:
+    Existing services that need to go into salt.state files, so that I may
+    rebuild anything on the fly, or move services from one vm to another
+    seamlessly.
+    
+- Torrent server
+- Tor / tor-browser in -X forwarded env
+- Samba
+- Murmur server
+
+===============================================================================
+
+I will be placing salt-minions on all of my virtualboxes,
+But I need to plan for what levels the services will be installed on.
+
+# All Linux machines, Win Machines will differ?
+Base:
+  '*':
+    - zsh
+    - vnstat
+    - sshd
+    - sysklogd
+        - configured to log remotely to the archive, by hostname/day rotation
+    # The additional things that I can now apply 'across the board' to my servers
+        # such as removing login by password, only allowing keys.
+    - security_enhancements
+        - nopass
+        - ssh_authorizedkeys
+        - ufw, or iptables..
+        - able to set up chroots?
+        
+        
+# Device shifting media.
+'athenaeum':
+  - HandBrakeCLI
+  - samba
+  - samba.cfg
+
+
+# Maybe I can fix the 'crashing torrentd' here, by forcing a rerun of my update script.. instead of by hand.
+'prometheus':
+  - transmissiond
+  - transmissiond.conf
+  - tornode
+      - allow me to 'surf' using this machine, like I currently have my Debian-Testing box
+  - cronjobs for purge
+  
+  
+  

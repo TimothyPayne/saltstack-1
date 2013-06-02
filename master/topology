@@ -1,0 +1,14 @@
+This is my initial checklist findings with saltstack. I 
+
+top.sls
+    Servers and their roles.
+
+
+roles
+    A list of services that defines a role.
+    Using "include" to add services to the role.
+
+
+services
+    Individual grains that define everything related to their operation.
+    iptables, files to backup, selinux context settings
