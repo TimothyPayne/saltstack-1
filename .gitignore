@@ -1,0 +1,5 @@
+smb.conf
+settings.json
+torrc
+config
+*.tar.gz
