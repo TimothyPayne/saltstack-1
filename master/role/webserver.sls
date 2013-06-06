@@ -5,8 +5,9 @@
 #   more 'saltstack friendly' in terms of my architecture layout.
 # ======================================================================
 
+# Not really needed level2 yet, just testing my settings
 include:
-  - security.core
+  - security.level2
   - service.nginx
   - service.flask
   - service.uwsgi

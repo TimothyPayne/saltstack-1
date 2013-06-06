@@ -1,0 +1,19 @@
+Reporting:
+  Add a tool that will generate a saltstack topology in markdown, so
+  that I can easily see the 'tiers' and all attached services on
+  my network.
+
+
+Backups:
+  Design and add backup context to the states.
+  service.level should only contain the files/dirs that need to
+  be saved.
+
+  At a level above the services, is where the backup software and
+  message passing handling should be done.
+  Example with obnam:
+    service.mumble = /path/to/serverkeys
+    backup.tier = service.obnam < /all/paths/from/all/services-in-play
+  This is where the salt-pillars and some python scripting may come
+  into play. Such as, using the server name (pillar) as the obnam
+  client, for shared repos taking advantage of dedup

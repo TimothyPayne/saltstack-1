@@ -11,7 +11,7 @@ list of 'responsibilities' for each service to maintain about itself:
   - I have not implemented this architecture yet, still noting it down
 
 
-### Architecture Features this "Service Centric" saltstack design test
+### Architecture Features in this "Service Centric" saltstack design test
 
 
 #### Backups

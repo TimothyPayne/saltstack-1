@@ -1,0 +1,4 @@
+
+selinux:
+  pkg:
+    - installed

@@ -3,3 +3,4 @@ settings.json
 torrc
 config
 *.tar.gz
+.fuse_hidden*

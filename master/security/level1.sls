@@ -14,13 +14,5 @@
 
 include:
   - security.core
-
-
-selinux:
-  pkg:
-    - installed
-
-
-lxc:
-  pkg:
-    - installed
+  - service.selinux
+  - service.lxc
