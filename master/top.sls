@@ -24,14 +24,17 @@ base:
 # Get the following working:
 # =============================================================================
 
-# When finished, move them up to the appropriate server
 
-  'minion-1':
+  'icarus':
     - batnerd
-    - role.torrentserver
-    - security.core
+    - role.webserver
+
+
 
 #    - role.ticket-tracker
 #    - role.fileserver
 #    - role.transcoder
+
+#    - role.torrentserver
+#    - security.core
 

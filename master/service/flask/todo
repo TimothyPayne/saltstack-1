@@ -1,0 +1,20 @@
+
+
+# Need to tie it to nginx
+uwsgi -s /tmp/uwsgi.sock -w flask_file_name:app -H /path/to/virtual/env --chmod-socket 666
+
+
+# config the nginx files to point to this
+server {
+    listen       80;
+    server_name  _;
+    location / { try_files $uri @yourapplication; }
+    location @yourapplication {
+      include uwsgi_params;
+      uwsgi_pass unix:/tmp/uwsgi.sock;
+    }
+}
+
+# symlink to enable
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
