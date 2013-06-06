@@ -4,7 +4,7 @@ lan='192.168.1.0/24'
 gateway='192.168.1.1'
 dhcp=$gateway
 dns='208.67.222.222,208.67.220.220,8.8.8.8'
-saltmaster='192.168.1.110'
+saltmaster='192.168.1.100'
 
 # Need to handle the ip addresses and stuff in a pillar I think, to handle
 # proper things like localhost ip

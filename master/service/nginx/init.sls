@@ -10,4 +10,11 @@ nginx:
     - installed
 
 # Configuration
+
+
 # Firewall
+nginx-iptables:
+  cmd.wait_script:
+    - source: salt://service/nginx/nginx-iptables.sh
+    - watch:
+      - cmd: firewall-lockdown
