@@ -14,10 +14,6 @@ base:
     - role.darknet
 
 
-#    'athenaeum':
-#      - role.fileserver
-#      - role.transcoder
-
 
 # =============================================================================
 # TESTING BLOCK
@@ -30,11 +26,11 @@ base:
     - role.webserver
 
 
-
+#    'athenaeum':
 #    - role.ticket-tracker
 #    - role.fileserver
 #    - role.transcoder
 
-#    - role.torrentserver
+# Generic
 #    - security.core
 
