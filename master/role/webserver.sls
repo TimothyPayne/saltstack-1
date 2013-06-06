@@ -8,6 +8,6 @@
 include:
   - security.core
   - service.nginx
-  - service.uwsgi
   - service.flask
+  - service.uwsgi
   - service.supervisor

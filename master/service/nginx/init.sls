@@ -18,3 +18,8 @@ nginx-iptables:
     - source: salt://service/nginx/nginx-iptables.sh
     - watch:
       - cmd: firewall-lockdown
+
+# Backup configs
+  # Need config file setup here
+  # Directories for backup
+    # /usr/share/nginx/www
