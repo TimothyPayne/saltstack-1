@@ -1,7 +1,0 @@
-Topology and Ideology of roles in my saltstack:
-
-    This document may become null and void if I discover something about
-salt 'pillars' that addresses the concerns I have here.
-
-    Each role should be unique, in the sense that it provides a 'singular'
-service to my infrastructure, ie. Fileserver.

@@ -17,3 +17,12 @@ Backups:
   This is where the salt-pillars and some python scripting may come
   into play. Such as, using the server name (pillar) as the obnam
   client, for shared repos taking advantage of dedup
+
+I noticed that reloading the saltstate killed the fail2ban config
+  for iptables, that is generated on fail2ban installs. I can either
+  add custom iptables for it, or rethink my iptables-punching
+  schema to accomodate.
+
+Rethink the way that iptables works?
+  I'm thinking about having it write to files, to add permanence. Right
+  now all settings need to be looked at on reboot with a state.highstate.

@@ -7,12 +7,17 @@
 #   SSH configuration, to stop repeat attempts and set up key based auth.
 #
 #   Basic logging to a remote server, to allow me to monitor anything funky
+#
+#   Basic scanning enabled to look for rootkits or other malicious
+#     binaries.
 # =============================================================================
 
 
 include:
   - service.fail2ban
   - service.syslog-ng
+#  - service.rkhunter
+#  - service.clamav
 
 
 firewall-lockdown:
