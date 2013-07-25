@@ -19,4 +19,4 @@ obnam:
 #        - installed
 #    /etc/config:
 #        file.managed:
-#            settings that point to the logging server
+#            settings that point to the logging server (should be the local master?)

@@ -10,14 +10,17 @@
 #
 #   Basic scanning enabled to look for rootkits or other malicious
 #     binaries.
+#     Things that are known for the defeating this: 'Veil'
 # =============================================================================
 
 
 include:
   - service.fail2ban
-  - service.syslog-ng
-#  - service.rkhunter
-#  - service.clamav
+
+
+/etc/ssh/sshd_config:
+  file.managed:
+    - source: salt://service/ssh/sshd_config
 
 
 firewall-lockdown:
@@ -25,11 +28,14 @@ firewall-lockdown:
     - source: salt://security/iptables-lockdown.sh
 
 
-# ssh
-  # ssh keys updated, before the following (or I will lock myself out)
-  # PermitRootLogin no
-  # PasswordAuthentication no
-  # AllowUsers deploy@(your-ip) deploy@(another-ip-if-any)
-
 # The now apparently defunct server-shield would have made a great
   # addition here, look to find what it did and emulate it.
+
+# ssh todo:
+  # ssh keys updated, before the following (or I will lock myself out)
+    # PasswordAuthentication no
+    # AllowUsers deploy@(your-ip) deploy@(another-ip-if-any)
+#  - service.syslog-ng
+  # Needs a config file.
+#  - service.rkhunter
+#  - service.clamav

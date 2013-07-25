@@ -23,6 +23,19 @@ I noticed that reloading the saltstate killed the fail2ban config
   add custom iptables for it, or rethink my iptables-punching
   schema to accomodate.
 
-Rethink the way that iptables works?
-  I'm thinking about having it write to files, to add permanence. Right
-  now all settings need to be looked at on reboot with a state.highstate.
+
+Salt-state.cfg?
+  Rethink the way that iptables works
+    I'm thinking about having it write to files, to add permanence. Right
+    now all settings need to be looked at on reboot with a state.highstate.
+  I'm thinking about using salt to generate a state-script file that
+    can be added to rc.local which will handle permanence across reboot.
+    This way, I don't have to run a 'highstate' everytime I need to
+    reload things like iptables.
+  I need to design the "tiers" of things that will go into this.
+    iptables being one, what other things might I want to go into a
+    boot script that can't be covered by configs?
+  The purpose of this is to avoid touching the rc.local with
+    anything other than a one-line: saltstate.py. This way, I don't
+    have to worry about blowing out manually entered settings from
+    anyone that I wasn't aware of.

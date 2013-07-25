@@ -33,11 +33,11 @@ iptables -A OUTPUT -p icmp --icmp-type 0 -s $lan -m state --state ESTABLISHED,RE
 iptables -A INPUT -p icmp --icmp-type 0 -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type 8 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
-# SSH
+# SSH (Internal only)
 iptables -A INPUT -p tcp --source $lan --dport 22 -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 
-# Saltstack
+# Saltstack (Internal only)
 iptables -A INPUT -m multiport -p tcp --source $saltmaster --sports 4505,4506 -j ACCEPT
 iptables -A OUTPUT -p tcp --destination $saltmaster -m multiport --dports 4505,4506 -j ACCEPT
 

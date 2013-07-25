@@ -3,6 +3,9 @@
 #   Selinux
 #   LXC
 #
+# Attempting to stop stack smashing and other 'binary weakness'
+#   techniques used to gain control of the underlying OS.
+#
 # Because selinux and lxc are not 'drop in' to standard services,
 #   and need to be configured, this may not be as straight forward
 #   as I have it currently structured.. as the services states would

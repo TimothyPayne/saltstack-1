@@ -12,3 +12,4 @@ include:
   - service.flask
   - service.uwsgi
   - service.supervisor
+  - service.bottle
