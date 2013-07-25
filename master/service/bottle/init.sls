@@ -1,0 +1,3 @@
+python-bottle:
+  pkg:
+    - installed
